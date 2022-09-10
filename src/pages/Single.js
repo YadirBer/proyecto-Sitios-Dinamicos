@@ -16,7 +16,17 @@ const Single = (props) => {
     client
       .getEntry(id)
       .then((entry) => {
-        let richTextContent = documentToHtmlString(entry.fields.content);
+        let options = {
+          renderNode: {
+            "embedded-asset-block": (node) =>
+              `<img class="imageSize"
+            src="${node.data.target.fields.file.url}" />`,
+          },
+        };
+        let richTextContent = documentToHtmlString(
+          entry.fields.content,
+          options
+        );
         entry.fields.richTextContent = richTextContent;
         setData(entry);
         setIsLoading(false);

@@ -120,3 +120,9 @@ h6 {
   /* Support for IE. */
   font-feature-settings: "liga";
 }
+.imageSize {
+  display: block;
+  margin: 20px auto;
+  width: 500px;
+  height: auto;
+}
