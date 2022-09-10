@@ -3,7 +3,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 const WorkLoadingCard = (props) => {
   return (
-    <SkeletonTheme baseColor="#262435" highlightColor="#323444">
+    <SkeletonTheme baseColor="#3a5a40" highlightColor="#a3b18a">
       <Wrap>
         <Image />
         <Data>
@@ -31,7 +31,7 @@ const Wrap = styled.div`
 const Image = styled.div`
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: #262435;
+  background: #3a5a40;
 `;
 const Data = styled.div`
   padding: 15px;

@@ -1,28 +1,24 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 const WorkCard = (props) => {
+  const { entry } = props;
   return (
     <Wrap>
       <Image>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/React_Native_Logo.png/800px-React_Native_Logo.png"
-          alt="React"
+          src={entry?.fields?.thumbnail.fields.file.url}
+          alt={entry.fields.title}
         />
       </Image>
       <Data>
         <Date>
           <span className="material-icons-outlined">calendar_month</span>
-          <p>Junio 30 2022</p>
+          <p>{entry.fields.creationDate}</p>
         </Date>
-        <Title>Mi titulo</Title>
-        <Excerpt>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae
-          in assumenda deserunt possimus harum nulla corrupti totam? Ea ipsa
-          quod soluta animi suscipit. Esse sequi facere voluptatibus unde error
-          beatae.
-        </Excerpt>
+        <Title>{entry.fields.title}</Title>
+        <Excerpt>{entry.fields.extract}</Excerpt>
         <ReadMore>
-          <Link to="/hjasg">Read More</Link>
+          <Link to={`/entrada/${entry.sys.id}`}>Read More</Link>
         </ReadMore>
       </Data>
     </Wrap>
@@ -30,7 +26,6 @@ const WorkCard = (props) => {
 };
 const Wrap = styled.div`
   width: 100%;
-  padding: 20px;
   box-shadow: 0 14px 28px rgb(0, 0, 0, 0.25), 0 10px 10px rgb(0, 0, 0, 0.22);
 `;
 const Image = styled.div`
@@ -58,10 +53,12 @@ const Date = styled.div`
 `;
 const Title = styled.h4`
   font-size: 25px;
-  margin-top: 5px;
+  font-weight: 500;
+  margin-top: 9px;
 `;
 const Excerpt = styled.div`
-  font-size: 14px;
+  font-size: 1.2em;
+  font-weight: 400;
   margin-top: 9px;
 `;
 
@@ -73,6 +70,7 @@ const ReadMore = styled.div`
     text-decoration: none;
     color: inherit;
     font-size: 14px;
+    font-weight: 400;
   }
 `;
 export default WorkCard;

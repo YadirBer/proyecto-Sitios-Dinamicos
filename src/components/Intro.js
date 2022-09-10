@@ -8,11 +8,11 @@ const Intro = (props) => {
         </h1>
       </Name>
       <Content>
-        <h2>Developer</h2>
+        <h2>Productor Audiovisual & Desarrollador Front End Jr</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil
-          officia deleniti ea quis repellat in quas magni, vero odio eos ex
-          accusamus rerum est adipisci! Natus animi delectus quidem architecto!
+          Espíritu curioso y en busca de formas nuevas de creación y expresión.
+          Amante de la comida, comunicologo/cinematógrafo de profesion y
+          capoeirista por pasión, docente y desarrolador web en proceso.
         </p>
       </Content>
     </Wrap>
@@ -20,11 +20,13 @@ const Intro = (props) => {
 };
 const Name = styled.div`
   align-self: center;
-  font-size: 80px;
-  font-weight: 700;
+  font-size: 70px;
+  font-weight: 500;
+  grid-column-start: 2;
+  grid-column-end: 3;
   h1 {
     line-height: 90px;
-    text-shadow: 1px 2px 12px #000;
+    text-shadow: 2px 3px 3px #000;
   }
   span {
     display: block;
@@ -35,7 +37,20 @@ const Name = styled.div`
     width: 40%;
     height: 15px;
     margin-top: 20px;
-    background-color: #ffae28;
+    background-color: #3a5a40;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 80px;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    margin-top: 50px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 50px;
   }
 `;
 const Content = styled.div`
@@ -44,21 +59,45 @@ const Content = styled.div`
   padding-left: 15%;
   padding: 10%;
   h2 {
-    font-size: 40px;
+    font-size: 2em;
+    font-weight: 600;
+  }
+  p {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  @media screen and (max-width: 1200px) {
+    padding-left: 25%;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    padding: 0;
+    margin-top: 50px;
   }
 `;
 const Wrap = styled.section`
-  background-color: #323444;
+  background-color: #dad7cd;
   width: 100%;
-  padding: 50px 10%;
-  color: white;
+  padding: 50px 5%;
+  color: #576c7f;
   min-height: 100vh;
-  background-image: url(./img/kk.jpeg);
-  background-size: 300px 500px;
+  background-image: url(/img/perfil.png);
+  background-size: 370px 500px;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 5% 50%;
+  background-blend-mode: luminosity;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @media screen and (max-width: 1024px) {
+    gap: 50px;
+    padding: 50px 5%;
+  }
+  @media screen and (max-width: 768px) {
+    display: block;
+    background-size: 330px 480px;
+    background-position: 50% 120%;
+    height: 150vh;
+  }
 `;
 export default Intro;

@@ -14,10 +14,10 @@ const Skills = (props) => {
   );
 };
 const Wrap = styled.section`
-  background-color: #262435;
+  background-color: #dad7cd;
   width: 100%;
   padding: 50px 10%;
-  color: #fff;
+  color: #576c7f;
   min-height: 650px;
   h2 {
     text-align: center;
@@ -29,5 +29,11 @@ const SkillGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 export default Skills;
